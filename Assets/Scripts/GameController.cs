@@ -41,6 +41,8 @@ public class GameController : MonoBehaviour{
         topCorner = _camera.ViewportToWorldPoint(new Vector3(1,1,_camera.nearClipPlane));
         upperX = topCorner.x;
         upperY = topCorner.y;
+        Debug.Log(upperX.ToString());
+        Debug.Log(lowerX.ToString());
     }
 
     private void CheckSpawner(){
@@ -56,17 +58,14 @@ public class GameController : MonoBehaviour{
 
     private void SpawnEnemy(){
         GameObject enemyToSpawn = enemies[Random.Range(0, maxIndex+1)];
-        bool goodSpawn = false;
-        float xPoint = 0, yPoint = 0;
-        while(!goodSpawn){
-            xPoint = Random.Range(lowerX - spawnRadius, upperX + spawnRadius);
-            yPoint = Random.Range(lowerY - spawnRadius, upperY + spawnRadius);
-            if(xPoint > upperX || xPoint < lowerX){
-                if(yPoint > upperY || yPoint < lowerY){
-                    goodSpawn = true;
-                }
-            }
-        }
-        Instantiate(enemyToSpawn, new Vector3(xPoint, yPoint, 0), transform.rotation);
+        Vector3 cameraOffset = new Vector3(_camera.transform.position.x, _camera.transform.position.y, 0);
+        Vector3 spawnPoint = cameraOffset + RandomPointOnCircleEdge(spawnRadius + (upperX - lowerX)/2);
+        Debug.Log(spawnPoint);
+        Instantiate(enemyToSpawn, spawnPoint, transform.rotation);
+    }
+
+    private Vector3 RandomPointOnCircleEdge(float radius){
+        var vector2 = Random.insideUnitCircle.normalized * radius;
+        return new Vector3(vector2.x, vector2.y, 0);
     }
 }
