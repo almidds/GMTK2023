@@ -36,7 +36,6 @@ public class CircleAnimator : MonoBehaviour{
             float x = transform.position.x + radius * Mathf.Cos(theta);
             float y = transform.position.y + radius * Mathf.Sin(theta);
             circleCoords[i] = new Vector3(x, y, 0);
-            Debug.Log(circleCoords[i]);
             i++;
         }
         this.gameObject.GetComponent<LineRenderer>().SetPositions(circleCoords);

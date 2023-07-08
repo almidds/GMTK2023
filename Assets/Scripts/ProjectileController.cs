@@ -10,7 +10,7 @@ public class ProjectileController : MonoBehaviour{
     private float moveSpeed = 1.5f;
 
     [SerializeField]
-    private int damage;
+    private int damage = 5;
 
     public string parentName;
     public Vector3 direction;
@@ -36,6 +36,7 @@ public class ProjectileController : MonoBehaviour{
                     other.gameObject.GetComponent<PlayerController>().UpdateHealth(damage);
                     break;
             }
+            Explode();
         }
     }
 

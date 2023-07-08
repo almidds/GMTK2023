@@ -10,10 +10,10 @@ public abstract class Enemy : MonoBehaviour{
     // Update is called once per frame
     public void UpdateHealth(int damage){
         Debug.Log("I have taken damage");
-        // health -= damage;
-        // if(health < 0){
-        //     Die();
-        // }
+        health -= damage;
+        if(health <= 0){
+            Die();
+        }
     }
 
     public abstract void Shoot();
