@@ -20,5 +20,6 @@ public abstract class Enemy : MonoBehaviour{
 
     void Die(){
         Debug.Log("I have died");
+        Destroy(this.gameObject);
     }
 }

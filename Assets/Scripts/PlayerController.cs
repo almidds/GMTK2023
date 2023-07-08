@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour{
     [SerializeField]
     private float moveSpeed = 5f, activationCooldownMax = 3f, activationRadius = 3f;
 
+    [SerializeField]
+    private GameObject circleAnimator;
+
     private float activationCooldown;
     private bool canActivate = true;
 
@@ -28,22 +31,25 @@ public class PlayerController : MonoBehaviour{
             if(activationCooldown <= 0f){
                 canActivate = true;
                 activationCooldown = activationCooldownMax;
-                Debug.Log("Cooldown is ready");
             }
         }
 
     }
 
     void ActivateEnemies(){
-        Debug.Log("I have activated");
+        GameObject circle = Instantiate(circleAnimator, transform.position, transform.rotation);
+        circle.GetComponent<CircleAnimator>().numPoints = 20;
+        circle.GetComponent<CircleAnimator>().radius = activationRadius;
+
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, activationRadius);
         foreach(var enemy in enemies){
             if(enemy.gameObject.tag == "Enemy"){
-                Debug.Log("Found an enemy");
                 enemy.GetComponent<Enemy>().Shoot();
             }
         }
     }
+
+
 
     public void UpdateHealth(int damage){
         Debug.Log("I have taken damage");
