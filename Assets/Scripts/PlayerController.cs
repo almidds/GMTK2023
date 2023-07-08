@@ -41,6 +41,10 @@ public class PlayerController : MonoBehaviour{
     void Move(){
         Vector3 move = Vector3.Normalize(new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0)) * moveSpeed;
         transform.position += move * Time.deltaTime;
+        transform.position = new Vector3(
+                            transform.position.x,
+                            transform.position.y,
+                            transform.position.y/10);
     }
 
     void checkActivation(){
