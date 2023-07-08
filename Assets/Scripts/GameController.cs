@@ -12,9 +12,8 @@ public class GameController : MonoBehaviour{
     [SerializeField] private Camera _camera;
     [SerializeField] private GameObject[] enemies;
     private int maxIndex = 0;
-
-    Vector3 bottomCorner, topCorner;
-    float upperX, lowerX, upperY, lowerY;
+    float upperX, lowerX;
+    int ghostIndex = 0;
 
     void Start(){
         timeBetweenSpawns = timeBetweenSpawnsMax;
@@ -29,25 +28,18 @@ public class GameController : MonoBehaviour{
 
     private void UpdateTimer(){
         timerText.SetText(
-            "{0:0}:{1:0}",
+            "{0:0}:{1:00}",
             Mathf.FloorToInt(timer/60),
             Mathf.FloorToInt(timer % 60));
     }
 
     private void UpdateCameraBounds(){
-        bottomCorner = _camera.ViewportToWorldPoint(new Vector3(0,0,_camera.nearClipPlane));
-        lowerX = bottomCorner.x;
-        lowerY = bottomCorner.y;
-        topCorner = _camera.ViewportToWorldPoint(new Vector3(1,1,_camera.nearClipPlane));
-        upperX = topCorner.x;
-        upperY = topCorner.y;
-        Debug.Log(upperX.ToString());
-        Debug.Log(lowerX.ToString());
+        lowerX = _camera.ViewportToWorldPoint(new Vector3(0,0,_camera.nearClipPlane)).x;
+        upperX = _camera.ViewportToWorldPoint(new Vector3(1,1,_camera.nearClipPlane)).x;
     }
 
     private void CheckSpawner(){
         if(timeBetweenSpawns < 0){
-            Debug.Log("Spawning an enemy");
             SpawnEnemy();
             timeBetweenSpawns = timeBetweenSpawnsMax;
         }
@@ -58,9 +50,10 @@ public class GameController : MonoBehaviour{
 
     private void SpawnEnemy(){
         GameObject enemyToSpawn = enemies[Random.Range(0, maxIndex+1)];
+        enemyToSpawn.name = "Ghost " + ghostIndex.ToString();
+        ghostIndex++;
         Vector3 cameraOffset = new Vector3(_camera.transform.position.x, _camera.transform.position.y, 0);
         Vector3 spawnPoint = cameraOffset + RandomPointOnCircleEdge(spawnRadius + (upperX - lowerX)/2);
-        Debug.Log(spawnPoint);
         Instantiate(enemyToSpawn, spawnPoint, transform.rotation);
     }
 
