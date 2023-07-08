@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour{
 
     [SerializeField]
-    private float moveSpeed = 5f, activationCooldownMax = 3f, activationRadius = 3f;
+    private float moveSpeed = 5f, activationCooldownMax = 3f, activationRadius = 3f, invincibilityCooldownMax = 1f;
+    private float activationCooldown, invincibilityCooldown;
+    private bool invincible;
 
     [SerializeField]
     private GameObject circleAnimator;
 
-    private float activationCooldown;
     private bool canActivate = true;
 
     public int maxHealth;
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour{
     [SerializeField]
     GameObject activationTip;
 
+    private DamageFlash damageFlash;
+
     void Start(){
         sprite = GetComponent<SpriteRenderer>();
         activationCooldown = activationCooldownMax;
@@ -31,11 +34,14 @@ public class PlayerController : MonoBehaviour{
         maxHealth = 4;
         health = 4;
         UpdateUI();
+
+        damageFlash = GetComponent<DamageFlash>();
     }
 
     void Update(){
         Move();
-        checkActivation();
+        CheckActivation();
+        checkInvincibility();
     }
 
     void Move(){
@@ -47,7 +53,7 @@ public class PlayerController : MonoBehaviour{
                             transform.position.y/10);
     }
 
-    void checkActivation(){
+    void CheckActivation(){
         if(Input.GetKeyDown(KeyCode.Space) && canActivate){
             ActivateEnemies();
             canActivate = false;
@@ -56,6 +62,8 @@ public class PlayerController : MonoBehaviour{
         if(!canActivate){
             activationCooldown -= Time.deltaTime;
             if(activationCooldown <= 0f){
+                damageFlash.flashColor = new Color(0.85f, 0, 0.75f);
+                damageFlash.CallDamageFlash();
                 canActivate = true;
                 activationCooldown = activationCooldownMax;
                 GameObject particles = Instantiate(activationTip, transform.position + new Vector3(0,0,1), transform.rotation);
@@ -64,6 +72,15 @@ public class PlayerController : MonoBehaviour{
             else{
                 sprite.color = Color.Lerp(unchargedColor, Color.white, 1-activationCooldown/activationCooldownMax);
             }
+        }
+    }
+
+    void checkInvincibility(){
+        if(invincibilityCooldown < 0){
+            invincible = false;
+        }
+        else{
+            invincibilityCooldown -= Time.deltaTime;
         }
     }
 
@@ -81,11 +98,17 @@ public class PlayerController : MonoBehaviour{
     }
 
     public void UpdateHealth(int damage){
-        Debug.Log("Ow oof oowie");
-        health -= damage;
-        UpdateUI();
-        if(health <= 0){
-            Die();
+        if(!invincible){
+            health -= damage;
+            UpdateUI();
+            if(health <= 0){
+                Die();
+            }
+            damageFlash.flashColor = Color.white;
+            damageFlash.CallDamageFlash();
+
+            invincible = true;
+            invincibilityCooldown = invincibilityCooldownMax;
         }
     }
 
