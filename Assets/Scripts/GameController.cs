@@ -65,8 +65,6 @@ public class GameController : MonoBehaviour{
             Vector2 cameraOffset = new Vector2(_camera.transform.position.x, _camera.transform.position.y);
             vector2 = cameraOffset + Random.insideUnitCircle.normalized * radius;
             if(vector2.x > xMin && vector2.x < xMax && vector2.y > yMin && vector2.y < yMax){
-                Debug.Log(vector2.y.ToString());
-                Debug.Log(yMax);
                 goodPoint = true;
             }
         }while(goodPoint == false);
