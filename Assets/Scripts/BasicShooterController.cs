@@ -16,10 +16,16 @@ public class BasicShooterController : Enemy{
     private float rotationDirection;
 
     private float moveTime;
-    private bool isRotating;
+    private int movementIndex;
+
+    delegate void movementMethod();
+    List<movementMethod> movementMethods = new List<movementMethod>();
 
     void Start(){
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        movementMethods.Add(orbitPlayer);
+        movementMethods.Add(moveTowardsPlayer);
+        movementMethods.Add(wait);
     }
 
     void Update(){
@@ -38,18 +44,18 @@ public class BasicShooterController : Enemy{
     private void Move(){
         moveTime -= Time.deltaTime;
         if(moveTime <= 0){
-            isRotating = !isRotating;
-            moveTime = Random.Range(2f, 5f);
+            movementIndex = Random.Range(0, 3);
+            if(movementIndex==2){
+                moveTime = Random.Range(1f, 2f);
+            }
+            else{
+                moveTime = Random.Range(2f, 5f);
+            }
             randomMoveSpeed = moveSpeed * Random.Range(0.9f, 1.1f);
             randomAngularSpeed = angularSpeed * Random.Range(0.9f, 1.1f);
             rotationDirection = Mathf.Sign(Random.Range(-1f, 1f));
         }
-        if(isRotating){
-            orbitPlayer();
-        }
-        else{
-            moveTowardsPlayer();
-        }
+        movementMethods[movementIndex]();
     }
 
     private void orbitPlayer(){
@@ -60,5 +66,9 @@ public class BasicShooterController : Enemy{
 
     private void moveTowardsPlayer(){
         transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * moveSpeed);
+    }
+
+    private void wait(){
+        transform.position = transform.position;
     }
 }
