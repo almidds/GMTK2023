@@ -18,7 +18,14 @@ public class PlayerController : MonoBehaviour{
     public int health;
     public Image[] hearts;
 
+    SpriteRenderer sprite;
+    Color unchargedColor = new Color(0.7f, 0.7f, 0.7f, 1);
+    // Particle system that activates when charge is ready
+    [SerializeField]
+    GameObject activationTip;
+
     void Start(){
+        sprite = GetComponent<SpriteRenderer>();
         activationCooldown = activationCooldownMax;
 
         maxHealth = 4;
@@ -47,6 +54,11 @@ public class PlayerController : MonoBehaviour{
             if(activationCooldown <= 0f){
                 canActivate = true;
                 activationCooldown = activationCooldownMax;
+                GameObject particles = Instantiate(activationTip, transform.position + new Vector3(0,0,1), transform.rotation);
+                particles.transform.SetParent(transform);
+            }
+            else{
+                sprite.color = Color.Lerp(unchargedColor, Color.white, 1-activationCooldown/activationCooldownMax);
             }
         }
     }
