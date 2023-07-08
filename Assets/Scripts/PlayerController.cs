@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour{
 
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, activationRadius);
         foreach(var enemy in enemies){
+            Debug.Log(enemy.gameObject.name);
             if(enemy.gameObject.tag == "Enemy"){
                 enemy.GetComponent<Enemy>().Shoot();
             }

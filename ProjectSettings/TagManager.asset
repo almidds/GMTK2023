@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Enemy
   - Projectile
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Override
   - Water
   - UI
   - 
@@ -42,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Override
+    uniqueID: 2457669189
     locked: 0

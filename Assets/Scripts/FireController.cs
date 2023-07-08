@@ -7,6 +7,7 @@ public class FireController : MonoBehaviour{
     [SerializeField] private ParticleSystem fire, smoke;
     float timer, initialIntensity = 200;
     [SerializeField] private int damage;
+    private float hurtTimeMax = 0.5f, hurtTime = -0.1f;
     void Start(){
         timer = lifetime;
     }
@@ -20,11 +21,14 @@ public class FireController : MonoBehaviour{
         if(timer <= 0){
             Destroy(this.gameObject);
         }
+        if(hurtTime > 0){
+            hurtTime -= Time.deltaTime;
+        }
     }
 
-    void OnTriggerEnter2D(Collider2D other){
+    private void OnTriggerStay2D(Collider2D other){
         string otherTag = other.gameObject.tag;
-        if(otherTag != "Projectile"){
+        if(otherTag != "Projectile" && hurtTime < 0){
             switch(otherTag){
                 case "Enemy":
                     other.gameObject.GetComponent<Enemy>().UpdateHealth(damage);
@@ -33,6 +37,7 @@ public class FireController : MonoBehaviour{
                     other.gameObject.GetComponent<PlayerController>().UpdateHealth(damage);
                     break;
             }
+            hurtTime = hurtTimeMax;
         }
     }
 
