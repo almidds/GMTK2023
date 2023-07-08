@@ -219,5 +219,5 @@ MonoBehaviour:
   moveSpeed: 0.4
   explosionRange: 0.75
   explosionTime: 2
-  explosionParticles: {fileID: 1144950749324643372, guid: 0cc02cda2cfdb48c491fbdde39b4d8ed, type: 3}
+  explosionParticles: {fileID: 1144950749324643372, guid: d5b9ddc40cb1f8146988fa6062d09cb7, type: 3}
   circleAnimator: {fileID: 696329501421970134, guid: 0ab15726c1a672844bbc48d932685cf0, type: 3}
