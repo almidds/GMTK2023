@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   projectile: {fileID: 4579482493866134891, guid: d16f8397a49ce104cbfb03a1e8443619, type: 3}
+  healthPotion: {fileID: 1360946789342192141, guid: f8392b465b5a948bd8a1aa3957153263, type: 3}
   shootPoint: {fileID: 2757590460144863755}
   moveSpeed: 0.3
   angularSpeed: 10

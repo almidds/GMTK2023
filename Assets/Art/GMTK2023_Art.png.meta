@@ -370,7 +370,7 @@ TextureImporter:
         width: 54
         height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -378,6 +378,48 @@ TextureImporter:
       bones: []
       spriteID: a607e851efdc9904b9bdbc0047d6c1d4
       internalID: -300929793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Health
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 413
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a1b987a69b395c4b88b146ecaae9f51
+      internalID: 24733915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 418
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb5014387f01e7d44b9b21a151f62520
+      internalID: 974790426
       vertices: []
       indices: 
       edges: []
@@ -395,6 +437,7 @@ TextureImporter:
     nameFileIdTable:
       Bomber: -2010139580
       ExplodingGhost: -300929793
+      Fire: 974790426
       GMTK2023_Art_0: 1101495299
       GMTK2023_Art_1: -829428613
       GMTK2023_Art_2: -1201902506
@@ -406,6 +449,7 @@ TextureImporter:
       GMTK2023_Art_8: 238278982
       GMTK2023_Art_9: -510726035
       Grass: 1540300971
+      Health: 24733915
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

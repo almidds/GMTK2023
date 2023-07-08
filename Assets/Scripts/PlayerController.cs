@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour{
     [SerializeField]
     private float moveSpeed = 5f, activationCooldownMax = 3f, activationRadius = 3f, invincibilityCooldownMax = 1f;
     private float activationCooldown, invincibilityCooldown;
-    private bool invincible;
+    private bool invincible = false;
 
     [SerializeField]
     private GameObject circleAnimator;
@@ -98,17 +98,24 @@ public class PlayerController : MonoBehaviour{
     }
 
     public void UpdateHealth(int damage){
-        if(!invincible){
+        if(damage < 0){
             health -= damage;
             UpdateUI();
-            if(health <= 0){
-                Die();
-            }
-            damageFlash.flashColor = Color.white;
-            damageFlash.CallDamageFlash();
+        }else{
+            if(!invincible){
+                health -= damage;
+                UpdateUI();
+                if(health <= 0){
+                    Die();
+                }
+                damageFlash.flashColor = Color.white;
+                damageFlash.CallDamageFlash();
 
-            invincible = true;
-            invincibilityCooldown = invincibilityCooldownMax;
+                if (damage > 0){
+                    invincible = true;
+                    invincibilityCooldown = invincibilityCooldownMax;
+                }
+            }
         }
     }
 

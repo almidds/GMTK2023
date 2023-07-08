@@ -8,6 +8,8 @@ public abstract class Enemy : MonoBehaviour{
     public GameObject projectile;
     private DamageFlash damageFlash;
 
+    [SerializeField]private GameObject healthPotion;
+
     private void Awake(){
         damageFlash = GetComponent<DamageFlash>();
     }
@@ -24,6 +26,9 @@ public abstract class Enemy : MonoBehaviour{
     public abstract void Shoot();
 
     void Die(){
+        if (Random.Range(0, 20) == 1){
+            Instantiate(healthPotion, transform.position + new Vector3(0, 0, 1), transform.rotation);
+        }
         Destroy(this.gameObject);
     }
 }

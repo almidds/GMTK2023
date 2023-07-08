@@ -12,7 +12,6 @@ public class FireController : MonoBehaviour{
     }
 
     void Update(){
-        Debug.Log(timer);
         timer -= Time.deltaTime;
         var emission = fire.emission;
         emission.rateOverTime = Mathf.Lerp(initialIntensity, 0, 1 - timer/lifetime);
