@@ -20,6 +20,7 @@ public class BasicExploderController : Enemy
 
     [SerializeField]
     private GameObject circleAnimator;
+    [SerializeField] private Transform shadow;
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +31,20 @@ public class BasicExploderController : Enemy
     // Update is called once per frame
     void Update()
     {
-        if (!exploding)
+        if (!exploding){
             Move();
+            Bob();
+        }
         else
             explosionTime -= Time.deltaTime;
         if (explosionTime <= 0)
             Explode();
+    }
+
+    void Bob(){
+        var tempPos = shadow.position;
+        transform.position += Vector3.up * 0.001f * Mathf.Sin(Time.time * 5);
+        shadow.position = tempPos;
     }
 
     private void MoveTowardsPlayer()

@@ -17,6 +17,7 @@ public class BasicShooterController : Enemy{
 
     private float moveTime;
     private int movementIndex;
+    [SerializeField] private Transform shadow;
 
     delegate void movementMethod();
     List<movementMethod> movementMethods = new List<movementMethod>();
@@ -30,6 +31,13 @@ public class BasicShooterController : Enemy{
 
     void Update(){
         Move();
+        Bob();
+    }
+
+    void Bob(){
+        var tempPos = shadow.position;
+        transform.position += Vector3.up * 0.0005f * Mathf.Sin(Time.time * 5);
+        shadow.position = tempPos;
     }
 
     public override void Shoot(){

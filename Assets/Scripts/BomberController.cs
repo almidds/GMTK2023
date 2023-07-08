@@ -11,6 +11,7 @@ public class BomberController : Enemy{
     [SerializeField] float timeToMoveMax, moveSpeed;
     private float timeToMove;
     private Vector3 target;
+    [SerializeField] private Transform shadow;
 
     private float xMin = -1f, xMax = 18f, yMin = 0.6f, yMax = 19.8f;
 
@@ -32,6 +33,13 @@ public class BomberController : Enemy{
             pickNewTarget();
         }
         transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * moveSpeed);
+        Bob();
+    }
+
+    void Bob(){
+        var tempPos = shadow.position;
+        transform.position += Vector3.up * 0.001f * Mathf.Sin(Time.time * 5);
+        shadow.position = tempPos;
     }
 
     void UpdateZPos(){
