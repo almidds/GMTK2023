@@ -433,7 +433,7 @@ TextureImporter:
         width: 16
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -441,6 +441,69 @@ TextureImporter:
       bones: []
       spriteID: ad18a43835d31a746a30250fb0ea97fd
       internalID: 891384036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowL
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 123
+        width: 71
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25eaa7246c6e35b45b9226dd03dbad8d
+      internalID: 244877061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowM
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 110
+        width: 54
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de59446fc3eac0447a2f8779500f4d46
+      internalID: -247005669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShadowS
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 99
+        width: 28
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3c229462eb0704e8b155032d3db59a
+      internalID: 108897113
       vertices: []
       indices: 
       edges: []
@@ -472,6 +535,9 @@ TextureImporter:
       GMTK2023_Art_9: -510726035
       Grass: 1540300971
       Health: 24733915
+      ShadowL: 244877061
+      ShadowM: -247005669
+      ShadowS: 108897113
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
