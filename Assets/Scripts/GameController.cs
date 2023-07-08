@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour{
     float upperX, lowerX;
     int ghostIndex = 0;
 
+    private float xMin = -1f, xMax = 18f, yMin = 0.6f, yMax = 19.8f;
+
     void Start(){
         timeBetweenSpawns = timeBetweenSpawnsMax;
     }
@@ -52,13 +54,23 @@ public class GameController : MonoBehaviour{
         GameObject enemyToSpawn = enemies[Random.Range(0, maxIndex+1)];
         enemyToSpawn.name = "Ghost " + ghostIndex.ToString();
         ghostIndex++;
-        Vector3 cameraOffset = new Vector3(_camera.transform.position.x, _camera.transform.position.y, 0);
-        Vector3 spawnPoint = cameraOffset + RandomPointOnCircleEdge(spawnRadius + (upperX - lowerX)/2);
+        Vector3 spawnPoint =  RandomPointOnCircleEdge(spawnRadius + (upperX - lowerX)/2);
         Instantiate(enemyToSpawn, spawnPoint, transform.rotation);
     }
 
     private Vector3 RandomPointOnCircleEdge(float radius){
-        var vector2 = Random.insideUnitCircle.normalized * radius;
+        bool goodPoint = false;
+        Vector2 vector2;
+        do{
+            Vector2 cameraOffset = new Vector2(_camera.transform.position.x, _camera.transform.position.y);
+            vector2 = cameraOffset + Random.insideUnitCircle.normalized * radius;
+            if(vector2.x > xMin && vector2.x < xMax && vector2.y > yMin && vector2.y < yMax){
+                Debug.Log(vector2.y.ToString());
+                Debug.Log(yMax);
+                goodPoint = true;
+            }
+        }while(goodPoint == false);
+
         return new Vector3(vector2.x, vector2.y, 0);
     }
 }
