@@ -454,7 +454,7 @@ TextureImporter:
         width: 71
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -475,7 +475,7 @@ TextureImporter:
         width: 54
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -496,7 +496,7 @@ TextureImporter:
         width: 28
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -504,6 +504,48 @@ TextureImporter:
       bones: []
       spriteID: 7e3c229462eb0704e8b155032d3db59a
       internalID: 108897113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK2023_Art_10
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 443
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c0e335796b8f04a8a81445c9d85c0e
+      internalID: -1996375083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK2023_Art_11
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 409
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a330b14006a11b148b85f536e493cad3
+      internalID: 556136676
       vertices: []
       indices: 
       edges: []
@@ -525,6 +567,8 @@ TextureImporter:
       Fire: 974790426
       GMTK2023_Art_0: 1101495299
       GMTK2023_Art_1: -829428613
+      GMTK2023_Art_10: -1996375083
+      GMTK2023_Art_11: 556136676
       GMTK2023_Art_2: -1201902506
       GMTK2023_Art_3: 404104078
       GMTK2023_Art_4: 1051276851
