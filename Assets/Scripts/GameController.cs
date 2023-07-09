@@ -68,7 +68,7 @@ public class GameController : MonoBehaviour{
 
     private void PauseGame(){
         if(paused){
-            gameObject.GetComponent<AudioSource>().volume = 0.14f;
+            gameObject.GetComponent<AudioSource>().volume = 0.08f;
             paused = false;
             Time.timeScale = 1f;
             pauseScreen.SetActive(false);

@@ -7,6 +7,7 @@ public class WeatherController : MonoBehaviour{
     private float lightningTime;
     private bool firingLightning;
     [SerializeField] private GameObject lightningOverlay;
+    [SerializeField] private AudioClip lightning;
 
     void Start(){
         lightningTime = 15;
@@ -32,8 +33,10 @@ public class WeatherController : MonoBehaviour{
 
     void FireLightning(){
         {
-            if (!lightningOverlay.active)
+            if (!lightningOverlay.active){
                 lightningOverlay.SetActive(true);
+                AudioSource.PlayClipAtPoint(lightning, transform.position);
+            }   
             else
                 lightningOverlay.SetActive(false);
         }
