@@ -25,7 +25,7 @@ public abstract class Enemy : MonoBehaviour{
 
     public abstract void Shoot();
 
-    void Die(){
+    public void Die(){
         if (Random.Range(0, 20) == 1){
             Instantiate(healthPotion, transform.position + new Vector3(0, 0, 1), transform.rotation);
         }

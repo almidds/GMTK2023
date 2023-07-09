@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour{
     }
 
     void CheckActivation(){
-        if(Input.GetKeyDown(KeyCode.Space) && canActivate){
+        if(Input.GetKeyDown(KeyCode.Space) && canActivate && Time.timeScale != 0){
             ActivateEnemies();
             canActivate = false;
         }

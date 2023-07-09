@@ -35,9 +35,11 @@ public class BasicShooterController : Enemy{
     }
 
     void Bob(){
-        var tempPos = shadow.position;
-        transform.position += Vector3.up * 0.0005f * Mathf.Sin(Time.time * 5);
-        shadow.position = tempPos;
+        if(Time.timeScale != 0){
+            var tempPos = shadow.position;
+            transform.position += Vector3.up * 0.0005f * Mathf.Sin(Time.time * 5);
+            shadow.position = tempPos;
+        }
     }
 
     public override void Shoot(){

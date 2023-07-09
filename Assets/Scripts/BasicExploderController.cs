@@ -42,9 +42,11 @@ public class BasicExploderController : Enemy
     }
 
     void Bob(){
-        var tempPos = shadow.position;
-        transform.position += Vector3.up * 0.001f * Mathf.Sin(Time.time * 5);
-        shadow.position = tempPos;
+        if(Time.timeScale != 0){
+            var tempPos = shadow.position;
+            transform.position += Vector3.up * 0.001f * Mathf.Sin(Time.time * 5);
+            shadow.position = tempPos;
+        }
     }
 
     private void MoveTowardsPlayer()

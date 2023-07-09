@@ -6,16 +6,27 @@ using TMPro;
 
 public class GameController : MonoBehaviour{
     // Amount of time the game goes on for, how long between waves
-    [SerializeField] private float timer = 300f, timeBetweenWavesMax = 40f, spawnRadius, timeBetweenSpawnsMax;
+    [SerializeField] private float timer = 5f, timeBetweenWavesMax = 40f, spawnRadius, timeBetweenSpawnsMax;
     private float timeBetweenWaves, timeBetweenSpawns;
-    [SerializeField] private TextMeshProUGUI timerText, winLoseText;
+    [SerializeField] private TextMeshProUGUI timerText, winLoseText, winLoseSubText;
     [SerializeField] private Camera _camera;
     [SerializeField] private GameObject[] enemies;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject winLoseScreen;
+    private bool winLose = false;
     private int maxIndex = 0;
     float upperX, lowerX;
     int ghostIndex = 0;
 
     private float xMin = -1f, xMax = 18f, yMin = 0.6f, yMax = 19.8f;
+    [SerializeField] private GameObject pauseScreen;
+    private bool paused = false;
+
+    private Coroutine _destroyCoroutine;
+
+    void CallDestroy(){
+        _destroyCoroutine = StartCoroutine(DestroyEnemies());
+    }
 
     void Start(){
         timeBetweenSpawns = timeBetweenSpawnsMax;
@@ -26,13 +37,74 @@ public class GameController : MonoBehaviour{
         UpdateTimer();
         UpdateCameraBounds();
         CheckSpawner();
+        if(Input.GetKeyDown(KeyCode.Escape) && winLose != true){
+            PauseGame();
+            CallDestroy();
+        }
+        if(player == null){
+            LoseScreen();
+        }
+        if(timer <= 0){
+            WinScreen();
+        }
+    }
+
+    private void PauseGame(){
+        if(paused){
+            paused = false;
+            Time.timeScale = 1f;
+            pauseScreen.SetActive(false);
+        }
+        else{
+            paused = true;
+            Time.timeScale = 0f;
+            pauseScreen.SetActive(true);
+        }
+    }
+
+    private void LoseScreen(){
+        Time.timeScale = 0;
+        winLose = true;
+        winLoseText.color = Color.red;
+        winLoseText.SetText("You have died");
+        winLoseSubText.SetText("Press R to retry");
+        winLoseScreen.SetActive(true);
+    }
+
+    private void WinScreen(){
+        Time.timeScale = 0;
+        winLose = true;
+        winLoseText.SetText("You survived");
+        winLoseSubText.SetText("Congratulations!");
+        winLoseScreen.SetActive(true);
+        CallDestroy();
+    }
+
+    public IEnumerator DestroyEnemies(){
+        float timeBetweenKills = 0.1f;
+        float timePassed = 0f;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        for(int i = 0; i < enemies.Length; i++){
+            enemies[i].GetComponent<Enemy>().Die();
+            timePassed = timeBetweenKills;
+            while(timePassed > 0){
+                timePassed -= Time.unscaledDeltaTime;
+                yield return null;
+            }
+        }
     }
 
     private void UpdateTimer(){
-        timerText.SetText(
-            "{0:0}:{1:00}",
-            Mathf.FloorToInt(timer/60),
-            Mathf.FloorToInt(timer % 60));
+        if(timer > 0){
+            timerText.SetText(
+                "{0:0}:{1:00}",
+                Mathf.FloorToInt(timer/60),
+                Mathf.FloorToInt(timer % 60));
+        }
+        else{
+            timerText.SetText("00:00");
+        }
+
     }
 
     private void UpdateCameraBounds(){

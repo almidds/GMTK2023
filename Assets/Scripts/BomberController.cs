@@ -24,6 +24,7 @@ public class BomberController : Enemy{
     void Update(){
         Move();
         UpdateZPos();
+        Bob();
     }
 
     void Move(){
@@ -33,13 +34,14 @@ public class BomberController : Enemy{
             pickNewTarget();
         }
         transform.position = Vector3.MoveTowards(transform.position, target, Time.deltaTime * moveSpeed);
-        Bob();
     }
 
     void Bob(){
-        var tempPos = shadow.position;
-        transform.position += Vector3.up * 0.001f * Mathf.Sin(Time.time * 5);
-        shadow.position = tempPos;
+        if(Time.timeScale != 0){
+            var tempPos = shadow.position;
+            transform.position += Vector3.up * 0.001f * Mathf.Sin(Time.time * 5);
+            shadow.position = tempPos;
+        }
     }
 
     void UpdateZPos(){
