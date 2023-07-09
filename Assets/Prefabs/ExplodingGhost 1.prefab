@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6877132641739875440}
   - component: {fileID: 7031083231601572586}
   - component: {fileID: 6628517593752426847}
+  - component: {fileID: 4648261741158462170}
   m_Layer: 0
   m_Name: ExplodingGhost 1
   m_TagString: Enemy
@@ -218,6 +219,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4648261741158462170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883075611656772437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be95597f02cac9f4abad3825c839a258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whichFlip: 0
 --- !u!1 &3913232966855154444
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +373,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7423867056565154549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.056, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
