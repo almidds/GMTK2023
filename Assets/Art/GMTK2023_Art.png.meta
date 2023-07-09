@@ -559,7 +559,7 @@ TextureImporter:
         width: 28
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -580,7 +580,7 @@ TextureImporter:
         width: 28
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -588,6 +588,27 @@ TextureImporter:
       bones: []
       spriteID: 8d06ddc1852ec654a8795412262e99f6
       internalID: 1877314752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cross
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 390
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6f93fc37fec9b4bb61fed2c4f8ce48
+      internalID: 1855522413
       vertices: []
       indices: 
       edges: []
@@ -605,6 +626,7 @@ TextureImporter:
     nameFileIdTable:
       Bomb: 891384036
       Bomber: -2010139580
+      Cross: 1855522413
       ExplodingGhost: -300929793
       Fire: 974790426
       GMTK2023_Art_0: 1101495299
