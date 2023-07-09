@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour{
     void Start(){
         Time.timeScale = 1f;
         timeBetweenSpawns = timeBetweenSpawnsMax;
+        timeBetweenWaves = timeBetweenWavesMax;
     }
 
     void Update(){
@@ -39,6 +40,7 @@ public class GameController : MonoBehaviour{
         UpdateTimer();
         UpdateCameraBounds();
         CheckSpawner();
+        CheckWaves();
         if(Input.GetKeyDown(KeyCode.Escape) && winLose != true){
             PauseGame();
         }
@@ -53,6 +55,14 @@ public class GameController : MonoBehaviour{
         }
         if(Input.GetKeyDown(KeyCode.R) && winLose){
             SceneManager.LoadScene("SampleScene");
+        }
+    }
+
+    private void CheckWaves(){
+        timeBetweenWaves -= Time.deltaTime;
+        if(timeBetweenWaves < 0){
+            maxIndex = Mathf.Min(maxIndex + 1, enemies.Length - 1);
+            timeBetweenWaves = timeBetweenWavesMax;
         }
     }
 
