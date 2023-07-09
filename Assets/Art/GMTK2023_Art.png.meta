@@ -517,7 +517,7 @@ TextureImporter:
         width: 28
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -538,7 +538,7 @@ TextureImporter:
         width: 28
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -546,6 +546,48 @@ TextureImporter:
       bones: []
       spriteID: a330b14006a11b148b85f536e493cad3
       internalID: 556136676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK2023_Art_12
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 376
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9815ef39bc67a458210491c852a2b8
+      internalID: 1091378389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GMTK2023_Art_13
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 363
+        width: 28
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d06ddc1852ec654a8795412262e99f6
+      internalID: 1877314752
       vertices: []
       indices: 
       edges: []
@@ -569,6 +611,8 @@ TextureImporter:
       GMTK2023_Art_1: -829428613
       GMTK2023_Art_10: -1996375083
       GMTK2023_Art_11: 556136676
+      GMTK2023_Art_12: 1091378389
+      GMTK2023_Art_13: 1877314752
       GMTK2023_Art_2: -1201902506
       GMTK2023_Art_3: 404104078
       GMTK2023_Art_4: 1051276851

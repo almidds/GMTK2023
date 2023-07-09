@@ -52,6 +52,10 @@ public class BasicExploderController : Enemy
     private void MoveTowardsPlayer()
     {
         transform.position = Vector3.MoveTowards(transform.position, player.position, Time.deltaTime * randomMoveSpeed);
+        transform.position = new Vector3(
+                    transform.position.x,
+                    transform.position.y,
+                    transform.position.y/10);
     }
 
     private void Wait()
