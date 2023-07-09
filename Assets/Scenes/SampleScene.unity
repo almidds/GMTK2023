@@ -1232,8 +1232,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 884581439
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d958d0aff3732434eb5c3b75b1cda296, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1826,6 +1826,10 @@ PrefabInstance:
       propertyPath: healthPotion
       value: 
       objectReference: {fileID: 1360946789342192141, guid: f8392b465b5a948bd8a1aa3957153263, type: 3}
+    - target: {fileID: 2628546285286631099, guid: 1c9a38e6263128846bed87f1e47e558c, type: 3}
+      propertyPath: circleAnimator
+      value: 
+      objectReference: {fileID: 696329501421970134, guid: 8abe5b574fca2ad499db081349cb8051, type: 3}
     - target: {fileID: 8174220178757935716, guid: 1c9a38e6263128846bed87f1e47e558c, type: 3}
       propertyPath: m_Name
       value: ExplodingGhost (1)
@@ -5913,6 +5917,7 @@ GameObject:
   - component: {fileID: 1714596339}
   - component: {fileID: 1714596337}
   - component: {fileID: 1714596341}
+  - component: {fileID: 1714596342}
   m_Layer: 0
   m_Name: RunnerGhost
   m_TagString: Enemy
@@ -5999,7 +6004,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714596336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.106, y: 18.278, z: 0}
+  m_LocalPosition: {x: 11.558, y: 17.928, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6043,6 +6048,33 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.16
+--- !u!50 &1714596342
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714596336}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1717955220
 GameObject:
   m_ObjectHideFlags: 0
@@ -7041,6 +7073,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 142333275268938441, guid: 596227ebdd6f2f04da5bf3d195dfc667, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1183144807846944006, guid: 596227ebdd6f2f04da5bf3d195dfc667, type: 3}
       propertyPath: m_RootOrder
       value: 10

@@ -116,4 +116,11 @@ public class BasicExploderController : Enemy
             MoveTowardsPlayer();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        string otherTag = other.gameObject.tag;
+        if(otherTag=="Player"){
+            exploding = true;
+        }
+    }
 }

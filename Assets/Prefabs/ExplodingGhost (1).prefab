@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1407235621
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -247005669, guid: b38f15ec40db1954388fa777b2d771cf, type: 3}
   m_Color: {r: 0.056999996, g: 0.056999996, b: 0.056999996, a: 0.70980394}
@@ -191,8 +191,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 884581439
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -300929793, guid: b38f15ec40db1954388fa777b2d771cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -234,7 +234,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.01, y: 0}
@@ -306,5 +306,5 @@ MonoBehaviour:
   explosionRange: 0.75
   explosionTime: 2
   explosionParticles: {fileID: 1144950749324643372, guid: d5b9ddc40cb1f8146988fa6062d09cb7, type: 3}
-  circleAnimator: {fileID: 696329501421970134, guid: 0ab15726c1a672844bbc48d932685cf0, type: 3}
+  circleAnimator: {fileID: 696329501421970134, guid: 8abe5b574fca2ad499db081349cb8051, type: 3}
   shadow: {fileID: 1976650448731710146}

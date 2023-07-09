@@ -54,4 +54,12 @@ public class RunnerController : Enemy{
         move = false;
         waitTime = waitTimeMax;
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        string otherTag = other.gameObject.tag;
+        if(otherTag=="Player"){
+            other.gameObject.GetComponent<PlayerController>().UpdateHealth(1);
+            UpdateHealth(10);
+        }
+    }
 }

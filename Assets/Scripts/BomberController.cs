@@ -12,6 +12,7 @@ public class BomberController : Enemy{
     private float timeToMove;
     private Vector3 target;
     [SerializeField] private Transform shadow;
+    [SerializeField] private GameObject circleAnimator;
 
     private float xMin = -1f, xMax = 18f, yMin = 0.6f, yMax = 19.8f;
 
@@ -48,7 +49,7 @@ public class BomberController : Enemy{
         transform.position = new Vector3(
                     transform.position.x,
                     transform.position.y,
-                    transform.position.y/10);
+                    shadow.position.y/10);
     }
 
     void pickNewTarget(){
@@ -76,6 +77,16 @@ public class BomberController : Enemy{
             Vector3 start = shootPoint.transform.position;
             GameObject bombTemp = Instantiate(bomb, shootPoint.transform.position, transform.rotation);
             bombTemp.GetComponent<BombController>().CallCurve(start, target);
+            GameObject circle = Instantiate(circleAnimator, player.transform.position, transform.rotation);
+            circle.GetComponent<CircleAnimator>().numPoints = 20;
+            circle.GetComponent<CircleAnimator>().radius = 0.52f;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        string otherTag = other.gameObject.tag;
+        if(otherTag=="Player"){
+            other.gameObject.GetComponent<PlayerController>().UpdateHealth(1);
         }
     }
 }

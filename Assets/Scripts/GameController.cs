@@ -39,7 +39,6 @@ public class GameController : MonoBehaviour{
         CheckSpawner();
         if(Input.GetKeyDown(KeyCode.Escape) && winLose != true){
             PauseGame();
-            CallDestroy();
         }
         if(player == null){
             LoseScreen();
