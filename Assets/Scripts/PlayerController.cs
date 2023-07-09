@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour{
 
     private DamageFlash damageFlash;
 
+    [SerializeField] private GameObject deathExplosion;
+
     void Start(){
         sprite = GetComponent<SpriteRenderer>();
         activationCooldown = activationCooldownMax;
@@ -139,6 +141,7 @@ public class PlayerController : MonoBehaviour{
     }
 
     private void Die(){
+        Instantiate(deathExplosion, transform.position, Quaternion.Euler(90, 0, 0));
         Destroy(this.gameObject);
     }
 }

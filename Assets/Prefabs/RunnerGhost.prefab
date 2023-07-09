@@ -106,6 +106,7 @@ MonoBehaviour:
   health: 1
   projectile: {fileID: 0}
   healthPotion: {fileID: 1360946789342192141, guid: f8392b465b5a948bd8a1aa3957153263, type: 3}
+  deathExplosion: {fileID: 4428450226697358122, guid: bfcc877a1e919ef449e74a4f815fca81, type: 3}
   moveSpeed: 1.2
   waitTimeMax: 2
   shadow: {fileID: 5411905673889815862}

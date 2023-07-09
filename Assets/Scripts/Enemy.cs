@@ -9,6 +9,7 @@ public abstract class Enemy : MonoBehaviour{
     private DamageFlash damageFlash;
 
     [SerializeField]private GameObject healthPotion;
+    [SerializeField]private GameObject deathExplosion;
 
     private void Awake(){
         damageFlash = GetComponent<DamageFlash>();
@@ -29,6 +30,7 @@ public abstract class Enemy : MonoBehaviour{
         if (Random.Range(0, 20) == 1){
             Instantiate(healthPotion, transform.position + new Vector3(0, 0, 1), transform.rotation);
         }
+        Instantiate(deathExplosion, transform.position, Quaternion.Euler(90, 0, 0));
         Destroy(this.gameObject);
     }
 }

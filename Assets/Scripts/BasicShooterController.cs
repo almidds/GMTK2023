@@ -30,7 +30,9 @@ public class BasicShooterController : Enemy{
     }
 
     void Update(){
-        Move();
+        if(player != null){
+            Move();
+        }
         Bob();
     }
 

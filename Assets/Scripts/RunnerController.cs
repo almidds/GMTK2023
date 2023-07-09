@@ -27,7 +27,7 @@ public class RunnerController : Enemy{
             }
         }
 
-        if(move){
+        if(move && player != null){
             Move();
         }
         Bob();

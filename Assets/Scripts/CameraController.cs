@@ -19,10 +19,12 @@ public class CameraController : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        Vector3 targetPos = target.position + cameraOffset;
-        Vector3 clampedPos = new Vector3(Mathf.Clamp(targetPos.x, xMin, xMax), Mathf.Clamp(targetPos.y, yMin, yMax), targetPos.z);
-        Vector3 smoothPos = Vector3.SmoothDamp(transform.position, clampedPos, ref velocity, damping);
-    
-        transform.position = smoothPos;
+        if(target != null){
+            Vector3 targetPos = target.position + cameraOffset;
+            Vector3 clampedPos = new Vector3(Mathf.Clamp(targetPos.x, xMin, xMax), Mathf.Clamp(targetPos.y, yMin, yMax), targetPos.z);
+            Vector3 smoothPos = Vector3.SmoothDamp(transform.position, clampedPos, ref velocity, damping);
+        
+            transform.position = smoothPos;
+        }
     }
 }

@@ -23,7 +23,9 @@ public class BomberController : Enemy{
     }
 
     void Update(){
-        Move();
+        if(player != null){
+            Move();
+        }
         UpdateZPos();
         Bob();
         this.GetComponent<Animator>().SetBool("Shooting", false);

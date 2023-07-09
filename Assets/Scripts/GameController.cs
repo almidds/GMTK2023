@@ -76,6 +76,8 @@ public class GameController : MonoBehaviour{
         winLoseText.SetText("You have died");
         winLoseSubText.SetText("Press R to retry");
         winLoseScreen.SetActive(true);
+        winLoseText.gameObject.SetActive(true);
+        winLoseSubText.gameObject.SetActive(true);
     }
 
     private void WinScreen(){
@@ -84,6 +86,8 @@ public class GameController : MonoBehaviour{
         winLoseText.SetText("You survived");
         winLoseSubText.SetText("Congratulations! \n Press R to play again");
         winLoseScreen.SetActive(true);
+        winLoseText.gameObject.SetActive(true);
+        winLoseSubText.gameObject.SetActive(true);
         CallDestroy();
     }
 

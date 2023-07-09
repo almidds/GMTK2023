@@ -221,6 +221,7 @@ MonoBehaviour:
   health: 4
   projectile: {fileID: 3109676746817571362, guid: 67fe6928932497e4582f7bd1d665e155, type: 3}
   healthPotion: {fileID: 1360946789342192141, guid: f8392b465b5a948bd8a1aa3957153263, type: 3}
+  deathExplosion: {fileID: 2055583499962651592, guid: e048009dd47d07846885cb2390066cf9, type: 3}
   shootPoint: {fileID: 5074398599543804211}
   bomb: {fileID: 3109676746817571362, guid: 67fe6928932497e4582f7bd1d665e155, type: 3}
   timeToMoveMax: 5

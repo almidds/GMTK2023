@@ -38,7 +38,9 @@ public class BasicExploderController : Enemy
     // Update is called once per frame
     void Update(){
         if (!exploding){
-            Move();
+            if(player != null){
+                Move();
+            }
             Bob();
         }
         else{
