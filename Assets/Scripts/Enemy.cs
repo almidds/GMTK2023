@@ -10,7 +10,7 @@ public abstract class Enemy : MonoBehaviour{
 
     [SerializeField]private GameObject healthPotion;
 
-    private void Awake(){
+    private void Start(){
         damageFlash = GetComponent<DamageFlash>();
     }
 
