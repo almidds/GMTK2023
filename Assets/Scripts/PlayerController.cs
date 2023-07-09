@@ -102,6 +102,7 @@ public class PlayerController : MonoBehaviour{
 
     public void UpdateHealth(int damage){
         if(damage < 0){
+            this.gameObject.GetComponent<AudioSource>().Play();
             health -= damage;
             UpdateUI();
         }else{

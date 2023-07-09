@@ -103,12 +103,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c8a9c39675583543b1846e993ff9454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 2
   projectile: {fileID: 4579482493866134891, guid: d16f8397a49ce104cbfb03a1e8443619, type: 3}
   healthPotion: {fileID: 1360946789342192141, guid: f8392b465b5a948bd8a1aa3957153263, type: 3}
   deathExplosion: {fileID: 4428450226697358122, guid: bfcc877a1e919ef449e74a4f815fca81, type: 3}
   shootPoint: {fileID: 2757590460144863755}
-  moveSpeed: 0.3
+  moveSpeed: 1.2
   angularSpeed: 10
   shadow: {fileID: 8344550549906301469}
 --- !u!58 &5301470260285996810
