@@ -26,6 +26,7 @@ public class BomberController : Enemy{
         Move();
         UpdateZPos();
         Bob();
+        this.GetComponent<Animator>().SetBool("Shooting", false);
     }
 
     void Move(){
@@ -80,6 +81,7 @@ public class BomberController : Enemy{
             GameObject circle = Instantiate(circleAnimator, player.transform.position, transform.rotation);
             circle.GetComponent<CircleAnimator>().numPoints = 20;
             circle.GetComponent<CircleAnimator>().radius = 0.52f;
+            this.GetComponent<Animator>().SetBool("Shooting", true);
         }
     }
 

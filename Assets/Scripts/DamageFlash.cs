@@ -20,8 +20,6 @@ public class DamageFlash : MonoBehaviour{
         material = spriteRenderer.material;
     }
 
-    
-
     public void CallDamageFlash(){
         _damageFlashCoroutine = StartCoroutine(DamageFlasher());
     }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5301470260285996810}
   - component: {fileID: 6859861192446189254}
   - component: {fileID: 3070019743071417609}
+  - component: {fileID: 6757794818064549212}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Enemy
@@ -143,7 +144,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.01, y: 0}
   serializedVersion: 2
-  m_Radius: 0.19
+  m_Radius: 0.16
 --- !u!50 &6859861192446189254
 Rigidbody2D:
   serializedVersion: 4
@@ -191,6 +192,27 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &6757794818064549212
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231586844972355337}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77a6bf5c39841154bba47e587f9c8b17, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6269450959789861046
 GameObject:
   m_ObjectHideFlags: 0
