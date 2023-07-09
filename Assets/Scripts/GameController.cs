@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameController : MonoBehaviour{
@@ -29,6 +30,7 @@ public class GameController : MonoBehaviour{
     }
 
     void Start(){
+        Time.timeScale = 1f;
         timeBetweenSpawns = timeBetweenSpawnsMax;
     }
 
@@ -45,6 +47,12 @@ public class GameController : MonoBehaviour{
         }
         if(timer <= 0){
             WinScreen();
+        }
+        if(Input.GetKeyDown(KeyCode.Q) && paused){
+            Application.Quit();
+        }
+        if(Input.GetKeyDown(KeyCode.R) && winLose){
+            SceneManager.LoadScene("SampleScene");
         }
     }
 
@@ -74,7 +82,7 @@ public class GameController : MonoBehaviour{
         Time.timeScale = 0;
         winLose = true;
         winLoseText.SetText("You survived");
-        winLoseSubText.SetText("Congratulations!");
+        winLoseSubText.SetText("Congratulations! \n Press R to play again");
         winLoseScreen.SetActive(true);
         CallDestroy();
     }

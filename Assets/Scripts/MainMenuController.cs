@@ -14,6 +14,9 @@ public class MainMenuController : MonoBehaviour{
             activated = true;
             StartCoroutine(Fading());
         }
+        if(Input.GetKeyDown(KeyCode.Q)){
+            Application.Quit();
+        }
     }
 
     IEnumerator Fading(){
