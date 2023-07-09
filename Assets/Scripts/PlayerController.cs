@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour{
     private DamageFlash damageFlash;
 
     [SerializeField] private GameObject deathExplosion;
+    [SerializeField] AudioClip hurt, healed;
 
     void Start(){
         sprite = GetComponent<SpriteRenderer>();
@@ -102,11 +103,12 @@ public class PlayerController : MonoBehaviour{
 
     public void UpdateHealth(int damage){
         if(damage < 0){
-            this.gameObject.GetComponent<AudioSource>().Play();
+            AudioSource.PlayClipAtPoint(healed, transform.position, 0.45f);
             health -= damage;
             UpdateUI();
         }else{
             if(!invincible){
+                AudioSource.PlayClipAtPoint(hurt, transform.position, 0.45f);
                 health -= damage;
                 UpdateUI();
                 if(health <= 0){

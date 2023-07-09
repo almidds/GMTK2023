@@ -125,11 +125,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1991975809255221018}
   - component: {fileID: 3526392729596188991}
-  - component: {fileID: 5603938708351389433}
   - component: {fileID: 7370244612786545185}
   - component: {fileID: 1370136589691205472}
-  - component: {fileID: 8955354544486090879}
   - component: {fileID: 6136601578995042627}
+  - component: {fileID: -3464031508853076342}
+  - component: {fileID: 5603938708351389433}
   m_Layer: 0
   m_Name: Bomber
   m_TagString: Enemy
@@ -152,7 +152,7 @@ Transform:
   - {fileID: 5074398599543804211}
   - {fileID: 5824650247176347469}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3526392729596188991
 SpriteRenderer:
@@ -174,7 +174,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: aeb936198d8b57647a7e0bee22d08c1c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -206,28 +206,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5603938708351389433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7865038177253889702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f6366b386e9d9f459b4d8c80bc1465f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 4
-  projectile: {fileID: 3109676746817571362, guid: 67fe6928932497e4582f7bd1d665e155, type: 3}
-  healthPotion: {fileID: 1360946789342192141, guid: f8392b465b5a948bd8a1aa3957153263, type: 3}
-  deathExplosion: {fileID: 2055583499962651592, guid: e048009dd47d07846885cb2390066cf9, type: 3}
-  shootPoint: {fileID: 5074398599543804211}
-  bomb: {fileID: 3109676746817571362, guid: 67fe6928932497e4582f7bd1d665e155, type: 3}
-  timeToMoveMax: 5
-  moveSpeed: 0.5
-  shadow: {fileID: 5824650247176347469}
-  circleAnimator: {fileID: 696329501421970134, guid: 8abe5b574fca2ad499db081349cb8051, type: 3}
 --- !u!70 &7370244612786545185
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -290,26 +268,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8955354544486090879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7865038177253889702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e7ccd0596e5bbf4bb5894c9eb9be0f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flashColor: {r: 0.18039216, g: 0, b: 0, a: 0}
-  flashTime: 0.25
-  flashCurve:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!95 &6136601578995042627
 Animator:
   serializedVersion: 5
@@ -331,3 +289,45 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3464031508853076342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7865038177253889702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e7ccd0596e5bbf4bb5894c9eb9be0f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 0.18039216, g: 0, b: 0, a: 0}
+  flashTime: 0.25
+  flashCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &5603938708351389433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7865038177253889702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6366b386e9d9f459b4d8c80bc1465f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
+  projectile: {fileID: 3109676746817571362, guid: 67fe6928932497e4582f7bd1d665e155, type: 3}
+  healthPotion: {fileID: 1360946789342192141, guid: f8392b465b5a948bd8a1aa3957153263, type: 3}
+  deathExplosion: {fileID: 2055583499962651592, guid: e048009dd47d07846885cb2390066cf9, type: 3}
+  shootPoint: {fileID: 5074398599543804211}
+  bomb: {fileID: 3109676746817571362, guid: 67fe6928932497e4582f7bd1d665e155, type: 3}
+  timeToMoveMax: 5
+  moveSpeed: 0.5
+  shadow: {fileID: 5824650247176347469}
+  circleAnimator: {fileID: 696329501421970134, guid: 8abe5b574fca2ad499db081349cb8051, type: 3}

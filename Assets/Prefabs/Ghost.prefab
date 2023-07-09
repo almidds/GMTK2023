@@ -108,8 +108,8 @@ MonoBehaviour:
   healthPotion: {fileID: 1360946789342192141, guid: f8392b465b5a948bd8a1aa3957153263, type: 3}
   deathExplosion: {fileID: 4428450226697358122, guid: bfcc877a1e919ef449e74a4f815fca81, type: 3}
   shootPoint: {fileID: 2757590460144863755}
-  moveSpeed: 1.2
-  angularSpeed: 10
+  moveSpeed: 0.8
+  angularSpeed: 15
   shadow: {fileID: 8344550549906301469}
 --- !u!58 &5301470260285996810
 CircleCollider2D:

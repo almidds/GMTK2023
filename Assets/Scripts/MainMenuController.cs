@@ -7,10 +7,12 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour{
     [SerializeField] private Image black;
     [SerializeField] private Animator anim;
+    [SerializeField] private AudioClip bell;
     private bool activated = false;
 
     void Update(){
         if(Input.GetKeyDown(KeyCode.Return) && !activated){
+            AudioSource.PlayClipAtPoint(bell, transform.position);
             activated = true;
             StartCoroutine(Fading());
         }

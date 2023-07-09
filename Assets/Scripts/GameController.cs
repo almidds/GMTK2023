@@ -68,11 +68,13 @@ public class GameController : MonoBehaviour{
 
     private void PauseGame(){
         if(paused){
+            gameObject.GetComponent<AudioSource>().volume = 0.14f;
             paused = false;
             Time.timeScale = 1f;
             pauseScreen.SetActive(false);
         }
         else{
+            gameObject.GetComponent<AudioSource>().volume = 0.01f;
             paused = true;
             Time.timeScale = 0f;
             pauseScreen.SetActive(true);
@@ -80,6 +82,7 @@ public class GameController : MonoBehaviour{
     }
 
     private void LoseScreen(){
+        gameObject.GetComponent<AudioSource>().volume = 0.01f;
         Time.timeScale = 0;
         winLose = true;
         winLoseText.color = Color.red;
@@ -91,6 +94,7 @@ public class GameController : MonoBehaviour{
     }
 
     private void WinScreen(){
+        gameObject.GetComponent<AudioSource>().volume = 0.01f;
         Time.timeScale = 0;
         winLose = true;
         winLoseText.SetText("You survived");
